@@ -20,34 +20,18 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
-      - name: Set up Go ${{ matrix.go-version }}
+      - name: Setup Go ${{ matrix.go-version }}
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go-version }}
-        id: go
 
-      - name: Check out code into the Go module directory
+      - name: Checkout Code
         uses: actions/checkout@v2
-
-      #      - name: Cache Go modules
-      #        uses: actions/cache@v1
-      #        with:
-      #          path: ~/go/pkg/mod
-      #          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-      #          restore-keys: |
-      #            ${{ runner.os }}-go-
 
       - name: Get Dependencies
         run: |
           go get github.com/onsi/ginkgo/ginkgo
-
-      #      - name: Build
-      #        run: go build -v .
-
-      #      - name: Get Ginkgo
-      #        run:
-      #        env:
-      #          GO111MODULE: on
+          ginkgo version
 
       - name: Test
         run: make test-ci
