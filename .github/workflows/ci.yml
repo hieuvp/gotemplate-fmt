@@ -20,15 +20,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
-      - name: Setup Go ${{ matrix.go-version }}
+      - name: Install Go ${{ matrix.go-version }}
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go-version }}
 
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Get Dependencies
+      - name: Get dependencies
         run: |
           go get github.com/onsi/ginkgo/ginkgo
           ginkgo version
