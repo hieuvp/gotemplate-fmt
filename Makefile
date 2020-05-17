@@ -1,7 +1,15 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Standard
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .PHONY: fmt
 fmt:
 	@printf "\n"
 	$(MAKEFILE_SCRIPT_PATH)/fmt-yaml.sh
+	@printf "\n"
+
+	@printf "\n"
+	$(MAKEFILE_SCRIPT_PATH)/fmt-shell.sh
 	@printf "\n"
 
 	@printf "\n"
@@ -16,6 +24,10 @@ fmt:
 lint:
 	@printf "\n"
 	$(MAKEFILE_SCRIPT_PATH)/lint-yaml.sh
+	@printf "\n"
+
+	@printf "\n"
+	$(MAKEFILE_SCRIPT_PATH)/lint-shell.sh
 	@printf "\n"
 
 	@printf "\n"
@@ -40,14 +52,24 @@ test-ci:
 	--progress
 	@printf "\n"
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Git
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .PHONY: git-add
 git-add: fmt lint test
 	@printf "\n"
 	git add --all .
 	@printf "\n"
 
-.PHONY: clean
-clean:
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Utils
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.PHONY: clean-install
+clean-install:
 	@printf "\n"
-	$(MAKEFILE_SCRIPT_PATH)/clean-go.sh
+	scripts/clean-install.sh
 	@printf "\n"
