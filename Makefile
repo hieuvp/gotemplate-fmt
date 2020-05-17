@@ -24,10 +24,13 @@ lint:
 
 .PHONY: test
 test:
+	@printf "\n"
 	ginkgo -r
+	@printf "\n"
 
 .PHONY: test-ci
 test-ci:
+	@printf "\n"
 	ginkgo -r \
 	--randomizeAllSpecs --randomizeSuites \
 	--failOnPending \
@@ -35,6 +38,7 @@ test-ci:
 	--trace \
 	--race \
 	--progress
+	@printf "\n"
 
 .PHONY: git-add
 git-add: fmt lint test
