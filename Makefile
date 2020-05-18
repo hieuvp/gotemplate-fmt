@@ -37,18 +37,31 @@ lint:
 .PHONY: test
 test:
 	@printf "\n"
+<<<<<<< HEAD
+	ginkgo -r
+=======
 	ginkgo -r --progress
+>>>>>>> master
 	@printf "\n"
 
 .PHONY: test-ci
 test-ci:
 	@printf "\n"
+<<<<<<< HEAD
+	ginkgo -r \
+=======
 	ginkgo -r --progress \
+>>>>>>> master
 	--randomizeAllSpecs --randomizeSuites \
 	--failOnPending \
 	--cover \
 	--trace \
+<<<<<<< HEAD
+	--race \
+	--progress
+=======
 	--race
+>>>>>>> master
 	@printf "\n"
 
 
