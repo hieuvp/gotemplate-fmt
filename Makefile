@@ -37,19 +37,18 @@ lint:
 .PHONY: test
 test:
 	@printf "\n"
-	ginkgo -r
+	ginkgo -r --progress
 	@printf "\n"
 
 .PHONY: test-ci
 test-ci:
 	@printf "\n"
-	ginkgo -r \
+	ginkgo -r --progress \
 	--randomizeAllSpecs --randomizeSuites \
 	--failOnPending \
 	--cover \
 	--trace \
-	--race \
-	--progress
+	--race
 	@printf "\n"
 
 
