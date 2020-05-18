@@ -2,8 +2,6 @@
 
 [![CI](https://github.com/hieuvp/gotemplate-fmt/workflows/CI/badge.svg?branch=master)](https://github.com/hieuvp/gotemplate-fmt/actions?query=workflow%3ACI+branch%3Amaster)
 
-> The Golang Templates Formatter.
-
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
