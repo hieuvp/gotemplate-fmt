@@ -30,6 +30,8 @@ gotemplate-fmt .
 
 ## Supported File Formats
 
+Make sure that you're using one of the following formats:
+
 - `.gohtml`
 - `.goyaml`
 - `.tpl`
